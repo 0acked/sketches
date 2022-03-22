@@ -1,0 +1,18 @@
+body{
+    background: linear-gradient(rgb(56, 191, 245),rgb(245, 125, 209));
+    font-size: 25px;
+}
+h1{
+    font-size:50px;
+}
+#score{
+  margin-left: -500px;
+    
+}
+#timer{
+   margin-right: -500px;
+   
+}
+#next_sketch{
+    color: aquamarine;
+}
