@@ -11,4 +11,36 @@ drawn_sketch= null;
 answer_holder= null;
 score= 0;
 
-
+function updateCanvas(){
+    background("white");
+    random_number=Math.floor(Math.random*quick_draw_data_set);
+    console.log(quick_draw_data_set);
+    document.getElementById("next_sketch").innerHTML= random_number;
+}
+function setup(){
+    canvas = createCanvas(280, 280);
+    canvas.center();
+    background("white");
+}
+function draw(){
+    check_sketch();
+    if(drawn_sketch==random_number){
+        answer_holder= "set";
+        score++;
+        document.getElementById("score").innerHTML=score;
+    }
+}
+function check_sketch(){
+    timer_counter++;
+    document.getElementById("timer").innerHTML=timer_counter;
+    console.log(timer_counter);
+    if(timer_counter>600){
+        timer_counter=0;
+        timer_check= "Completed!";
+    }
+    if(timer_check=="completed"||answer_holder=="set"){
+        timer_check= null;
+        answer_holder= null;
+        updateCanvas();
+    }
+}
